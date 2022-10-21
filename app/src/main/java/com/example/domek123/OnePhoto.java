@@ -12,12 +12,14 @@ import android.widget.RelativeLayout;
 
 public class OnePhoto extends AppCompatActivity {
     private ImageView img;
+    private LinearLayout layout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_one_photo);
         img = findViewById(R.id.imag);
-
+        layout = findViewById(R.id.layout);
+        layout.setAlpha(0.6f);
         Bundle bundle = getIntent().getExtras();
         String path = bundle.getString("path").toString();
         Bitmap bmp = betterImageDecode(path);
