@@ -11,13 +11,16 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -62,12 +65,11 @@ public class MainActivity extends AppCompatActivity {
                             if(intent.resolveActivity(getPackageManager()) != null){
                                 startActivityForResult(intent,200);
                             }
-                        }else{
+                        }else if(opcje[which] == "galeria"){
                             Intent intent = new Intent(Intent.ACTION_PICK);
                             intent.setType("image/*");
                             startActivityForResult(intent, 100);
                         }
-
                     }
                 });
                 alert.show();
@@ -129,9 +131,54 @@ public class MainActivity extends AppCompatActivity {
                 });
                 ImageView imageView = new ImageView(MainActivity.this);
                 imageView.setImageBitmap(b);
+                imageView.setLayoutParams(new LinearLayout.LayoutParams(300,ViewGroup.LayoutParams.MATCH_PARENT));
+                imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
                 alert.setView(imageView);
                 alert.show();
             }
+        }else if(requestCode == 100) {
+            if (resultCode == RESULT_OK) {
+                Uri imgData = data.getData();
+                try {
+                    InputStream stream = getContentResolver().openInputStream(imgData);
+                    Bitmap b = BitmapFactory.decodeStream(stream);
+
+                    AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
+                    alert.setTitle("Wybierz gdzie zapisać");
+                    alert.setItems(opcje, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                            b.compress(Bitmap.CompressFormat.JPEG, 100, stream); // kompresja, typ pliku jpg, png
+
+                            byte[] byteArray = stream.toByteArray();
+                            SimpleDateFormat df = new SimpleDateFormat("yyyyMMdd_HHmmss");
+                            String d = df.format(new Date());
+
+                            FileOutputStream fs = null;
+                            try {
+                                fs = new FileOutputStream(dir.listFiles()[which].getPath() + "/" + d + ".jpg");
+                                fs.write(byteArray);
+                                fs.close();
+                            } catch (FileNotFoundException e) {
+                                e.printStackTrace();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    });
+                    ImageView imageView = new ImageView(MainActivity.this);
+                    imageView.setImageBitmap(b);
+                    imageView.setLayoutParams(new LinearLayout.LayoutParams(300,ViewGroup.LayoutParams.MATCH_PARENT));
+                    imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+                    alert.setView(imageView);
+                    alert.show();
+                }
+
+            catch(FileNotFoundException ex){
+                ex.printStackTrace();
+            }
+        }
         }
 
     }
