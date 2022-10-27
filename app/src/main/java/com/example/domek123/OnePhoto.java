@@ -30,6 +30,17 @@ public class OnePhoto extends AppCompatActivity {
         Bitmap bmp = betterImageDecode(path);
         img.setImageBitmap(bmp);
         img.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                small = !small;
+                if(small){
+                    img.setScaleType(ImageView.ScaleType.CENTER);
+                }else{
+                    img.setScaleType(ImageView.ScaleType.CENTER_CROP);
+                }
+            }
+        });
 
 
     }
