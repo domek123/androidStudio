@@ -136,7 +136,6 @@ public class NewGalleriesActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(NewGalleriesActivity.this, NewGalleryActivity.class);
-                intent.putExtra("folderName",adapterView.getItemAtPosition(i).toString());
                 startActivity(intent);
             }
         });
