@@ -36,6 +36,7 @@ import java.util.Date;
 public class MainActivity extends AppCompatActivity {
     private RelativeLayout cameraBtn;
     private RelativeLayout albumsBtn;
+    private RelativeLayout newGallery;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +47,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, AlbumActivity.class);
+                startActivity(intent);
+            }
+        });
+        newGallery = findViewById(R.id.newGalleryButton);
+        newGallery.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, NewGalleriesActivity.class);
                 startActivity(intent);
             }
         });

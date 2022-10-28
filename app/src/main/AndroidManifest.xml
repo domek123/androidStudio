@@ -15,6 +15,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".NewGalleryActivity"
+            android:exported="true" />
+        <activity
+            android:name=".NewGalleriesActivity"
+            android:exported="true" />
+        <activity
             android:name=".OnePhoto"
             android:exported="true" />
         <activity
