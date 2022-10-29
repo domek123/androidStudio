@@ -1,10 +1,13 @@
 package com.example.domek123;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
+import android.view.MenuItem;
 import android.widget.ListView;
 
 import java.io.File;
@@ -18,6 +21,9 @@ public class NewGalleryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_gallery);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
         Bundle bundle = getIntent().getExtras();
         String folder = bundle.getString("folderName");
         File pic = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
@@ -35,5 +41,14 @@ public class NewGalleryActivity extends AppCompatActivity {
                 list
         );
         listView1.setAdapter(adapter);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            this.finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
