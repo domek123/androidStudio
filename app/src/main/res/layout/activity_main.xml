@@ -44,10 +44,10 @@ tools:context=".MainActivity">
             android:gravity="center"
             android:layout_height="wrap_content">
 
-<!--            <ImageView-->
-<!--                android:layout_width="57dp"-->
-<!--                android:layout_height="38dp"-->
-<!--                android:src="@drawable/camera" />-->
+            <ImageView
+                android:layout_width="57dp"
+                android:layout_height="38dp"
+                android:src="@drawable/camera" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -69,10 +69,10 @@ tools:context=".MainActivity">
             android:orientation="vertical"
             android:gravity="center"
             android:layout_height="wrap_content">
-<!--            <ImageView-->
-<!--                android:layout_width="57dp"-->
-<!--                android:layout_height="38dp"-->
-<!--                android:src="@drawable/album" />-->
+            <ImageView
+                android:layout_width="57dp"
+                android:layout_height="38dp"
+                android:src="@drawable/album" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -103,10 +103,10 @@ tools:context=".MainActivity">
             android:orientation="vertical"
             android:gravity="center"
             android:layout_height="wrap_content">
-<!--            <ImageView-->
-<!--                android:layout_width="57dp"-->
-<!--                android:layout_height="38dp"-->
-<!--                android:src="@drawable/collage" />-->
+            <ImageView
+                android:layout_width="57dp"
+                android:layout_height="38dp"
+                android:src="@drawable/collage" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -127,10 +127,10 @@ tools:context=".MainActivity">
             android:orientation="vertical"
             android:gravity="center"
             android:layout_height="wrap_content">
-<!--            <ImageView-->
-<!--                android:layout_width="57dp"-->
-<!--                android:layout_height="38dp"-->
-<!--                android:src="@drawable/network" />-->
+            <ImageView
+                android:layout_width="57dp"
+                android:layout_height="38dp"
+                android:src="@drawable/network" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -160,10 +160,10 @@ tools:context=".MainActivity">
                 android:orientation="vertical"
                 android:gravity="center"
                 android:layout_height="wrap_content">
-                <!--            <ImageView-->
-                <!--                android:layout_width="57dp"-->
-                <!--                android:layout_height="38dp"-->
-                <!--                android:src="@drawable/collage" />-->
+                            <ImageView
+                                android:layout_width="57dp"
+                                android:layout_height="38dp"
+                                android:src="@drawable/newalbum" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

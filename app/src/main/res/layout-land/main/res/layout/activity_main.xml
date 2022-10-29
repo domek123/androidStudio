@@ -73,7 +73,7 @@
                 <ImageView
                 android:layout_width="57dp"
                 android:layout_height="38dp"
-                android:src="@drawable/album" />
+                android:src="@drawable/newalbum" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

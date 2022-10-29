@@ -45,10 +45,10 @@
                 android:gravity="center"
                 android:layout_height="wrap_content">
 
-<!--                <ImageView-->
-<!--                    android:layout_width="57dp"-->
-<!--                    android:layout_height="38dp"-->
-<!--                    android:src="@drawable/camera" />-->
+                <ImageView
+                    android:layout_width="57dp"
+                    android:layout_height="38dp"
+                    android:src="@drawable/camera" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -70,10 +70,10 @@
                 android:orientation="vertical"
                 android:gravity="center"
                 android:layout_height="wrap_content">
-<!--                <ImageView-->
-<!--                    android:layout_width="57dp"-->
-<!--                    android:layout_height="38dp"-->
-<!--                    android:src="@drawable/album" />-->
+                <ImageView
+                    android:layout_width="57dp"
+                    android:layout_height="38dp"
+                    android:src="@drawable/album" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -104,10 +104,10 @@
                 android:orientation="vertical"
                 android:gravity="center"
                 android:layout_height="wrap_content">
-<!--                <ImageView-->
-<!--                    android:layout_width="57dp"-->
-<!--                    android:layout_height="38dp"-->
-<!--                    android:src="@drawable/collage" />-->
+                <ImageView
+                    android:layout_width="57dp"
+                    android:layout_height="38dp"
+                    android:src="@drawable/collage" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -128,10 +128,10 @@
                 android:orientation="vertical"
                 android:gravity="center"
                 android:layout_height="wrap_content">
-<!--                <ImageView-->
-<!--                    android:layout_width="57dp"-->
-<!--                    android:layout_height="38dp"-->
-<!--                    android:src="@drawable/network" />-->
+                <ImageView
+                    android:layout_width="57dp"
+                    android:layout_height="38dp"
+                    android:src="@drawable/network" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -142,5 +142,37 @@
         </RelativeLayout>
 
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/teal_200"
+        android:orientation="horizontal"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/newGalleryButton"
+            >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="57dp"
+                    android:layout_height="38dp"
+                    android:src="@drawable/newalbum" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="34sp"
+                    android:text="new album"/>
+            </LinearLayout>
 
+        </RelativeLayout>
+
+    </LinearLayout>
 </LinearLayout>
