@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Notatka do zdjęcia"
+        android:textSize="100px"
+        android:textColor="@color/black">
+    </TextView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Podaj tytuł oraz treść notatki oraz wybierz kolor tekstu"
+        android:textSize="50px"
+        android:textColor="@color/black">
+    </TextView>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="100px"
+        android:text="Tytuł"
+        android:textAlignment="center"></EditText>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="100px"
+        android:text="treść"
+        android:textAlignment="center"></EditText>
+</LinearLayout>

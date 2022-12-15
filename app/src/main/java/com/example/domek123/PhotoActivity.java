@@ -44,6 +44,7 @@ public class PhotoActivity extends AppCompatActivity {
                 public void onClick(View view) {
                     Intent intent = new Intent(PhotoActivity.this, OnePhoto.class);
                     intent.putExtra("path",imagepath);
+                    intent.putExtra("folder",folder);
                     startActivity(intent);
                 }
             }

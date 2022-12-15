@@ -4,21 +4,19 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class OnePhoto extends AppCompatActivity {
     private ImageView img;
     private LinearLayout layout;
+    private TextView textView;
     private boolean small = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +32,7 @@ public class OnePhoto extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         String path = bundle.getString("path").toString();
         Bitmap bmp = betterImageDecode(path);
+
         img.setImageBitmap(bmp);
         img.setScaleType(ImageView.ScaleType.CENTER_CROP);
         img.setOnClickListener(new View.OnClickListener() {
@@ -47,8 +46,6 @@ public class OnePhoto extends AppCompatActivity {
                 }
             }
         });
-
-
     }
     private Bitmap betterImageDecode(String filePath) {
         Bitmap myBitmap;
