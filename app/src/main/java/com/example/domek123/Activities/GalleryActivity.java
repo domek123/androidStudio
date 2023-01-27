@@ -1,4 +1,4 @@
-package com.example.domek123;
+package com.example.domek123.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 

@@ -1,4 +1,4 @@
-package com.example.domek123;
+package com.example.domek123.Activities;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,13 +16,16 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
+
+import com.amitshekhar.DebugDB;
+import com.example.domek123.R;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -37,11 +40,12 @@ public class MainActivity extends AppCompatActivity {
     private RelativeLayout cameraBtn;
     private RelativeLayout albumsBtn;
     private RelativeLayout newGallery;
+    private RelativeLayout noteBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        Log.d("xxx", DebugDB.getAddressLog());
         albumsBtn = findViewById(R.id.albumButton);
         albumsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,6 +59,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, NewGalleriesActivity.class);
+                startActivity(intent);
+            }
+        });
+        noteBtn = findViewById(R.id.notesButton);
+        noteBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, NotesActivity.class);
                 startActivity(intent);
             }
         });

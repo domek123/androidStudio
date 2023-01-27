@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/purple_200"
-    tools:context=".NewGalleriesActivity">
+    tools:context=".Activities.NewGalleriesActivity">
 
     <ListView
         android:id="@+id/listViewID"

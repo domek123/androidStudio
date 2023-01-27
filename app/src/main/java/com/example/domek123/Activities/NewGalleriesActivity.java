@@ -1,4 +1,4 @@
-package com.example.domek123;
+package com.example.domek123.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -12,16 +12,17 @@ import android.os.Environment;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
+import com.example.domek123.R;
+
 import java.io.File;
 
-public class AlbumActivity extends AppCompatActivity {
+public class NewGalleriesActivity extends AppCompatActivity {
 
     private ListView listView;
     private LinearLayout addFolderBtn;
@@ -33,7 +34,7 @@ public class AlbumActivity extends AppCompatActivity {
             array[i] = dir.listFiles()[i].getName();
         }
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
-                AlbumActivity.this,
+                NewGalleriesActivity.this,
                 R.layout.listview,
                 R.id.tv1,
                 array
@@ -45,8 +46,8 @@ public class AlbumActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_album);
-        
+        setContentView(R.layout.activity_new_galleries);
+
         File pic = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
         File dir = new File(pic, "DominikWojcik");
         dir.mkdir();
@@ -72,7 +73,7 @@ public class AlbumActivity extends AppCompatActivity {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Log.d("longClikc", adapterView.getItemAtPosition(i).toString());
-                AlertDialog.Builder alert = new AlertDialog.Builder(AlbumActivity.this);
+                AlertDialog.Builder alert = new AlertDialog.Builder(NewGalleriesActivity.this);
                 alert.setTitle("USUWANIE FOLDERU");
                 alert.setMessage("Czy na pewno usunać?");
                 alert.setPositiveButton("USUŃ", new DialogInterface.OnClickListener() {
@@ -103,10 +104,10 @@ public class AlbumActivity extends AppCompatActivity {
         addFolderBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AlertDialog.Builder alert = new AlertDialog.Builder(AlbumActivity.this);
+                AlertDialog.Builder alert = new AlertDialog.Builder(NewGalleriesActivity.this);
                 alert.setTitle("Nowy folder");
                 alert.setMessage("Podaj nazwe nowego folderu");
-                EditText input = new EditText(AlbumActivity.this);
+                EditText input = new EditText(NewGalleriesActivity.this);
                 input.setText("Nowy folder");
                 alert.setView(input);
                 alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -136,7 +137,7 @@ public class AlbumActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(AlbumActivity.this, PhotoActivity.class);
+                Intent intent = new Intent(NewGalleriesActivity.this, NewGalleryActivity.class);
                 intent.putExtra("folderName",adapterView.getItemAtPosition(i).toString());
                 startActivity(intent);
             }

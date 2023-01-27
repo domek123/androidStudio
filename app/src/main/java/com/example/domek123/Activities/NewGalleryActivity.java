@@ -1,4 +1,4 @@
-package com.example.domek123;
+package com.example.domek123.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -10,10 +10,12 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.widget.ListView;
 
+import com.example.domek123.R;
+import com.example.domek123.Adapter.TestAdapter;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class NewGalleryActivity extends AppCompatActivity {
     private ListView listView1;

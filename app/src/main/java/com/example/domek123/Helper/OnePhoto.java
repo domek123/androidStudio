@@ -1,4 +1,4 @@
-package com.example.domek123;
+package com.example.domek123.Helper;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -12,6 +12,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.example.domek123.R;
 
 public class OnePhoto extends AppCompatActivity {
     private ImageView img;

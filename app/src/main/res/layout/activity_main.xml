@@ -4,13 +4,13 @@ xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:orientation="vertical"
-tools:context=".MainActivity">
+tools:context=".Activities.MainActivity">
 
 
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/purple_200"
+    android:background="@color/image"
     android:layout_weight="1" >
     <RelativeLayout
         android:layout_width="match_parent"
@@ -28,7 +28,7 @@ tools:context=".MainActivity">
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_weight="1"
-    android:background="@color/teal_200"
+    android:background="@color/background"
     android:orientation="horizontal"
     >
     <RelativeLayout
@@ -52,6 +52,7 @@ tools:context=".MainActivity">
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="34sp"
+                android:textColor="@color/color"
                 android:text="camera"/>
 
         </LinearLayout>
@@ -77,6 +78,7 @@ tools:context=".MainActivity">
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="34sp"
+                android:textColor="@color/color"
                 android:text="albums"/>
         </LinearLayout>
 
@@ -88,7 +90,7 @@ tools:context=".MainActivity">
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_weight="1"
-    android:background="@color/teal_200"
+    android:background="@color/background"
     android:orientation="horizontal"
     >
     <RelativeLayout
@@ -111,6 +113,7 @@ tools:context=".MainActivity">
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="34sp"
+                android:textColor="@color/color"
                 android:text="collage"/>
         </LinearLayout>
 
@@ -135,6 +138,7 @@ tools:context=".MainActivity">
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="34sp"
+                android:textColor="@color/color"
                 android:text="network" />
         </LinearLayout>
 
@@ -145,9 +149,34 @@ tools:context=".MainActivity">
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:background="@color/teal_200"
+        android:background="@color/background"
         android:orientation="horizontal"
         >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/notesButton"
+            >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="57dp"
+                    android:layout_height="38dp"
+                    android:src="@drawable/note" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="34sp"
+                    android:textColor="@color/color"
+                    android:text="notes" />
+            </LinearLayout>
+
+        </RelativeLayout>
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -168,6 +197,7 @@ tools:context=".MainActivity">
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="34sp"
+                    android:textColor="@color/color"
                     android:text="new album"/>
             </LinearLayout>
 

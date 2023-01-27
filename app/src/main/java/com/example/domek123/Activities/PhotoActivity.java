@@ -1,4 +1,4 @@
-package com.example.domek123;
+package com.example.domek123.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -14,7 +14,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
+
+import com.example.domek123.Helper.OnePhoto;
+import com.example.domek123.R;
 
 import java.io.File;
 
