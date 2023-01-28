@@ -1,11 +1,13 @@
 package com.example.domek123.Adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -34,21 +36,25 @@ public class NotesArrayAdapter extends ArrayAdapter {
         // inflater - klasa konwertująca xml na kod javy
         LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         convertView = inflater.inflate(R.layout.note_layout, null);
-// convertView = inflater.inflate(_resource, null);
-// szukamy każdego TextView w layoucie
 
-        TextView tv1 = (TextView) convertView.findViewById(R.id.tv1);
-        tv1.setText("tekst pobrany z listy, getterem");
+        TextView tv1 = convertView.findViewById(R.id.notetitle);
+        tv1.setText(_list.get(position).getTitle());
 
-// gdybyśmy chcieli klikać Imageview wewnątrz wiersza:
-        ImageView iv1 = (ImageView) convertView.findViewById(R.id.iv2);
-        iv1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // klik w obrazek
-            }
-        });
+        tv1.setTextColor(Color.parseColor("#" +_list.get(position).getColor()));
 
+        TextView tv2 = convertView.findViewById(R.id.notecontent);
+        tv2.setText(_list.get(position).getNoteContent());
+
+        TextView tv3 = convertView.findViewById(R.id.path);
+        tv3.setText(_list.get(position).getPhotopath());
+
+        TextView tv4 = convertView.findViewById(R.id.noteid);
+        tv4.setText(String.valueOf(_list.get(position).getId()));
+
+        LinearLayout ll = convertView.findViewById(R.id.rownote);
+        if(position%2==0){
+            ll.setBackgroundColor(0xff777777);
+        }
         return convertView;
     }
 }

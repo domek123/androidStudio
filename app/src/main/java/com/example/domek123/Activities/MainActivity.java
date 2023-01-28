@@ -137,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
                         SimpleDateFormat df = new SimpleDateFormat("yyyyMMdd_HHmmss");
                         String d = df.format(new Date());
 
-                        FileOutputStream fs = null;
+                        FileOutputStream fs;
                         try {
                             fs = new FileOutputStream(dir.listFiles()[which].getPath() + "/" + d + ".jpg");
                             fs.write(byteArray);
@@ -176,7 +176,7 @@ public class MainActivity extends AppCompatActivity {
                             SimpleDateFormat df = new SimpleDateFormat("yyyyMMdd_HHmmss");
                             String d = df.format(new Date());
 
-                            FileOutputStream fs = null;
+                            FileOutputStream fs;
                             try {
                                 fs = new FileOutputStream(dir.listFiles()[which].getPath() + "/" + d + ".jpg");
                                 fs.write(byteArray);

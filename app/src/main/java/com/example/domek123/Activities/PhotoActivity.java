@@ -9,6 +9,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Environment;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,11 +27,12 @@ public class PhotoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_photo);
+        Log.d("XXX","XXXX");
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         layout = findViewById(R.id.layout);
         Bundle bundle = getIntent().getExtras();
-        String folder = bundle.getString("folderName").toString();
+        String folder = bundle.getString("folderName");
         File pic = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
         File dir = new File(pic, "DominikWojcik/" + folder);
         dir.mkdir();
