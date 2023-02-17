@@ -25,6 +25,7 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.amitshekhar.DebugDB;
+import com.example.domek123.CollageActivity;
 import com.example.domek123.R;
 
 import java.io.ByteArrayOutputStream;
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
     private RelativeLayout albumsBtn;
     private RelativeLayout newGallery;
     private RelativeLayout noteBtn;
+    private RelativeLayout collageBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,7 +72,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+        collageBtn = findViewById(R.id.collageButton);
+        collageBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, CollageActivity.class);
+                startActivity(intent);
+            }
+        });
         cameraBtn = findViewById(R.id.buttonCamera);
         cameraBtn.setOnClickListener(new View.OnClickListener() {
             @Override
