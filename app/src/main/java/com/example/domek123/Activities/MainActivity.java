@@ -25,7 +25,6 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.amitshekhar.DebugDB;
-import com.example.domek123.CollageActivity;
 import com.example.domek123.R;
 
 import java.io.ByteArrayOutputStream;
