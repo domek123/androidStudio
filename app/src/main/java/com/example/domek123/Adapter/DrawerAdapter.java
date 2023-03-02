@@ -88,12 +88,13 @@ public class DrawerAdapter extends ArrayAdapter {
                     String uniqueName =  (ZonedDateTime.now( ZoneOffset.UTC ).format( DateTimeFormatter.ISO_INSTANT ) +"_"+ ThreadLocalRandom.current().nextInt(0, 1000000 + 1)).replace('.','-').replace(':','_');
                     multipart.addFile("image/jpeg", "file", uniqueName+".jpg", this.photoToUpload);
                     String finalIp = ip;
-                    Log.d("XXXX","http://"+ip+"/api/upload");
+                    Log.d("XXXX","https://"+ip+"/api/upload");
                     multipart.launchRequest("http://"+ip+"/api/upload",
                             response -> {
                                 Toast.makeText(_context, "UPLOAD", Toast.LENGTH_SHORT).show();
                             },
                             error -> {
+                                Log.d("XXXD",error.toString());
                                 Toast.makeText(_context, finalIp, Toast.LENGTH_SHORT).show();
                                 Toast.makeText(_context, "ERROR", Toast.LENGTH_SHORT).show();
                             });
